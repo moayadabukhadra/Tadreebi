@@ -16,6 +16,9 @@ class CreateProposalsTable extends Migration
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('student_user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('intern_ship_post_id')->constrained()->onDelete('cascade');
+            $table->boolean('status')->default(false);
         });
     }
 

@@ -13,12 +13,12 @@ class internShipPost extends Model
 
     public function company()
     {
-        return $this->belongsTo(CompanyUser::class,'company_id');
+        return $this->belongsTo(CompanyUser::class,'company_user_id');
     }
 
-    public function student()
+    public function application()
     {
-        return $this->belongsTo(StudentUser::class,'student_id');
+        return $this->hasMany(InternShipApplication::class,'intern_ship_application_id');
     }
-    
+
 }
