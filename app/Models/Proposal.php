@@ -13,7 +13,12 @@ class Proposal extends Model
 
     public function student()
     {
-        return $this->belongsTo(StudentUser::class,'student_id');
+        return $this->belongsTo(StudentUser::class,'student_user_id');
+    }
+
+    public function internShipPost()
+    {
+        return $this->belongsTo(InternShipPost::class,'intern_ship_post_id');
     }
 
 

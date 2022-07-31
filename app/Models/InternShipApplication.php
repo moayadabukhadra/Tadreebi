@@ -13,13 +13,13 @@ class InternShipApplication extends Model
 
     public function student()
     {
-        return $this->belongsTo(StudentUser::class,'student_id');
+        return $this->belongsTo(StudentUser::class,'student_user_id');
     }
 
     public function internShipPost()
     {
-        return $this->belongsTo(internShipPost::class,'internship_id');
+        return $this->belongsTo(internShipPost::class,'intern_ship_post_id');
     }
 
-    
+
 }

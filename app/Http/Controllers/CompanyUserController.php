@@ -51,4 +51,14 @@ class CompanyUserController extends Controller
         auth()->login($user);
         return redirect('/');
     }
+
+    public function dashboard()
+    {
+        return view('dashboards.company-dashboard');
+    }
+
+    public function show()
+    {
+        return view('components.post-show');
+    }
 }

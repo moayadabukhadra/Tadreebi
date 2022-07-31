@@ -16,6 +16,17 @@ class StudentUser extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
+    public function internShipApplication()
+    {
+        return $this->hasMany(InternShipApplication::class,'intern_ship_application_id');
+    }
+
+    public function proposal()
+    {
+        return $this->hasMany(Proposal::class,'Propsal_id');
+    }
+
+
 
 
 

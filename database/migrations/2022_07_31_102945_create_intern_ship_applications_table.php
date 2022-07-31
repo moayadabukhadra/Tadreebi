@@ -15,8 +15,13 @@ class CreateInternShipApplicationsTable extends Migration
     {
         Schema::create('intern_ship_applications', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('intern_ship_post_id')->constrained()->onDelete('cascade');
+            $table->string('cover_letter');
+            $table->boolean('status')->default(false);
             $table->timestamps();
-        });
+
+            });
     }
 
     /**

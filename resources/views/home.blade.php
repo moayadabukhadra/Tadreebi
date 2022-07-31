@@ -1,4 +1,5 @@
 <x-layout>
+    <x-nav/>
     |<main>
         @include('components._header')
         <div class="relative -mt-12 lg:-mt-24">
@@ -265,5 +266,5 @@
             </g>
         </svg>
     </main>
-
+@include('components._footer')
 </x-layout>
