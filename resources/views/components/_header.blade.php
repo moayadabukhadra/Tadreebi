@@ -1,220 +1,28 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
-    <head>
-        <!-- META DATA -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-
-
-        <!--font-family-->
-		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
-
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-
-        <!-- TITLE OF SITE -->
-        <title>Zombiz</title>
-
-        <!-- for title img -->
-		<link rel="shortcut icon" type="image/icon" href="assets/images/logo/favicon.png"/>
-
-        <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-		<!--linear icon css-->
-		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-
-		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-
-		<!--hover.css-->
-        <link rel="stylesheet" href="assets/css/hover-min.css">
-
-		<!--vedio player css-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
-		<!--owl.carousel.css-->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-		<link href="assets/css/owl.theme.default.min.css" rel="stylesheet"/>
-
-
-        <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-		<!-- bootsnav -->
-		<link href="assets/css/bootsnav.css" rel="stylesheet"/>
-
-        <!--style.css-->
-        <link rel="stylesheet" href="assets/css/style.css">
-
-        <!--responsive.css-->
-        <link rel="stylesheet" href="assets/css/responsive.css">
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-        <!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-    </head>
-
-	<body>
-		<!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-
-
-
-		<!--header start-->
-		<section class="header">
-			<div class="container">
-				<div class="header-left">
-					<ul class="pull-left">
-						<li>
-							<a href="#">
-								<i class="fa fa-phone" aria-hidden="true"></i> +992 563 542
-							</a>
-						</li><!--/li-->
-						<li>
-							<a href="#">
-								<i class="fa fa-envelope" aria-hidden="true"></i>info@mail.com
-							</a>
-						</li><!--/li-->
-					</ul><!--/ul-->
-				</div><!--/.header-left -->
-				<div class="header-right pull-right">
-					<ul>
-						<li class="reg">
-							<a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">
-								Register
-							</a>
-								/
-							<a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-								Log in
-							</a>
-
-							<!-- small modal -->
-							<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-								<div class="modal-dialog modal-sm" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											 	<span aria-hidden="true">
-											 		<i class="fa fa-close"></i>
-											 	</span>
-											 </button>
-											<h4 class="modal-title" id="mySmallModalLabel">
-												Sign In
-											</h4>
-											<form class="sm-frm" style="padding:25px">
-												<label>Name :</label>
-												<input type="text" class="form-control" placeholder="Enter Email">
-												<label>Passoward :</label>
-												<input type="text" class="form-control" placeholder="Enter Passoward">
-												<label><input type="checkbox" name="personality"> Remenber Me</label>
-												<button type="button" class="btn btn-default pull-right">Submit</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- large modal -->
-							<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-								<div class="modal-dialog modal-lg" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											 	<span aria-hidden="true">
-											 		<i class="fa fa-close"></i>
-											 	</span>
-											</button>
-											<h4 class="modal-title" id="myLargeModalLabel">Register</h4>
-											<form class="lg-frm" style="padding:25px">
-												<label>Name :</label>
-												<input type="text" class="form-control" placeholder="Enter Name">
-												<label>Email :</label>
-												<input type="text" class="form-control" placeholder="Enter Email">
-												<label>Passoward :</label>
-												<input type="text" class="form-control" placeholder="Enter Passoward">
-												<button type="button" class="btn btn-default pull-right">Submit</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li><!--/li -->
-						<li>
-							<div class="social-icon">
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								</ul><!--/.ul -->
-							</div><!--/.social-icon -->
-						</li><!--/li -->
-					</ul><!--/ul -->
-				</div><!--/.header-right -->
-			</div><!--/.container -->
-
-		</section><!--/.header-->
-		<!--header end-->
-
-		<!--menu start-->
-		<section id="menu">
-			<div class="container">
-				<div class="menubar">
-					<nav class="navbar navbar-default">
-
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="index.html">
-								<img src="assets/images/logo/logo.png" alt="logo">
-							</a>
-						</div><!--/.navbar-header -->
-
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="service.html">Service</a></li>
-								<li><a href="project.html">Project</a></li>
-								<li><a href="team.html">Team</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li>
-									<a href="#">
-										<span class="lnr lnr-cart"></span>
-									</a>
-								</li>
-								<li class="search">
-									<form action="">
-										<input type="text" name="search" placeholder="Search....">
-										<a href="#">
-											<span class="lnr lnr-magnifier"></span>
-										</a>
-									</form>
-								</li>
-							</ul><!-- / ul -->
-						</div><!-- /.navbar-collapse -->
-					</nav><!--/nav -->
-				</div><!--/.menubar -->
-			</div><!-- /.container -->
-
-		</section><!--/#menu-->
+<header>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+<div class="pt-24">
+            <div class="container flex flex-col flex-wrap items-center px-3 mx-auto md:flex-row">
+                <!--Left Col-->
+                <div class="flex flex-col items-start justify-center w-full text-center md:w-2/5 md:text-left">
+                    <p class="w-full uppercase tracking-loose">What business are you?</p>
+                    <h1 class="my-4 text-5xl font-bold leading-tight">
+                        Main Hero Message to sell yourself!
+                    </h1>
+                    <p class="mb-8 text-2xl leading-normal">
+                        Sub-hero message, not too long and not too short. Make it just right!
+                    </p>
+                    <a class="px-8 py-4 mx-auto my-6 font-bold text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-full shadow-lg lg:mx-0 hover:underline focus:outline-none focus:shadow-outline hover:scale-105" href="#role">
+                        Get Started
+                    </a>
+                </div>
+                <!--Right Col-->
+                <div class="w-full py-6 text-center md:w-3/5">
+                    <img class="z-50 w-full md:w-4/5" src="images/hero.png" />
+                </div>
+            </div>
+</div>
+</header>

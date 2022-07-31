@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CompanyUserController;
+use App\Http\Controllers\RegiseterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/home', function(){
-    return view('layouts.layout');
-});
+Route::get('student/register',[RegiseterController::class,'create']);
 
-Route::get('/start', function(){
-    return view('components.getstarted');
-});
+Route::post('student/register', [RegiseterController::class, 'store']);
+
+
+Route::get('company/register',[CompanyUserController::class,'create']);
+
+Route::post('company/register',[CompanyUserController::class,'store']);
+
+
