@@ -7,8 +7,17 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 
-class RegiseterController extends Controller
+class StudentUserController extends Controller
 {
+    public function destroy()
+    {
+        auth()->logout();
+
+        return redirect('/');
+    }
+    public function show(){
+        return view('components.post-show');
+    }
 
    public function create(){
        return view('student-form');
@@ -22,7 +31,6 @@ class RegiseterController extends Controller
             'email' => 'required|email',
             'password' => 'required',
             'gpa' => 'required|max:4|min:0',
-            'university' => 'required',
             'factualy' => 'required',
         ]);
 
@@ -42,10 +50,22 @@ class RegiseterController extends Controller
         return redirect('/');
     }
 
+    // public function show(){
+    //     $student = auth()->user()->student;
+    //     return view('student-profile', compact('student'));
+
+    // }
+
+    public function dashboard(){
+
+        return view('dashboards.student-dashboard');
+
     }
 
 
 
+
+}
 
 
 

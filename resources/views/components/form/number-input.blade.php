@@ -1,7 +1,12 @@
 @props(['name', 'type' , 'min','max','step'])
-<div>
-        <label for="{{ $name }}" class="sr-only">{{ $name }}</label>
-          <input id="{{ $name }}" name="{{ $name }}" type="{{ $type }}" autocomplete="{{ $name }}" required class="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-          placeholder="{{ $name }}"
-          min="{{ $min }}" max="{{ $max }}" step="{{ $step }}">
-</div>
+
+<div class="mb-4">
+                    <input
+                      name="{{$name}}"
+                      type="{{ $type }}"
+                      class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+
+                      placeholder="{{ $name }}"
+                    />
+                  </div>
+

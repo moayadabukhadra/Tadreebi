@@ -1,9 +1,17 @@
-<div>
-
-    <button type="submit" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-    >
-
-        Sign in
-    </button>
-
-</div>
+@props(['name','type'])
+<button
+                      class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
+                      type="{{ $type }}"
+                        name="{{$name}}"
+                      style="
+                        background: linear-gradient(
+                          to right,
+                          #ee7724,
+                          #d8363a,
+                          #dd3675,
+                          #b44593
+                        );
+                      "
+                    >
+                      {{ $name }}
+                    </button>

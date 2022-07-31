@@ -1,6 +1,6 @@
 <x-layout>
 
-<section class="w-full h-full mt-16 ml-40 mb-96 gradient-form md:h-screen">
+<section class="w-full h-full mt-16 mb-16 ml-40 gradient-form md:h-screen">
   <div class="container h-full px-6 py-12">
     <div class="flex flex-wrap items-center justify-center h-full text-gray-800 g-6">
       <div class="xl:w-10/12">
@@ -16,21 +16,13 @@
                   />
                   <h4 class="pb-1 mt-1 mb-12 text-xl font-semibold">We are The Lotus Team</h4>
                 </div>
-                <form action="/company/register" method="POST">
+                <form method="POST" action="/login">
                     @csrf
 
-                  <p class="mb-4">Register</p>
-                  <x-form.input name="name" type="text"/>
+                  <p class="mb-4">Login</p>
+
                   <x-form.input name="email" type="email"/>
                   <x-form.input name="password" type="password"/>
-                  <x-form.input name="phone" type="phone"/>
-                  <x-form.input name="adress" type="text"/>
-                  <x-form.input name="industry" type="text"/>
-                  <x-form.input name="website" type="text"/>
-                  <x-form.textarea name="description" type="text"/>
-
-
-
 
 
                   <div class="pt-1 pb-1 mb-12 text-center">
@@ -38,7 +30,7 @@
                     <a class="text-gray-500" href="#!">Forgot password?</a>
                   </div>
                   <div class="flex items-center justify-between pb-6">
-                   <p class="mb-0 mr-2">Already have account?<a href="#" class="text-blue-700 ">login</a></p>
+                   <p class="mb-0 mr-2">Dont have account?<a href="/student/register" class="text-blue-700 ">Register</a></p>
                   </div>
                 </form>
               </div>
@@ -67,4 +59,6 @@
 </section>
 
 
+
 </x-layout>
+

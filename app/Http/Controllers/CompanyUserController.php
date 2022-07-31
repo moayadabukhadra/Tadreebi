@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyUser;
+use App\Models\Industry;
 use App\Models\User;
 use Faker\Provider\ar_EG\Company;
 use Illuminate\Http\Request;
@@ -43,8 +44,11 @@ class CompanyUserController extends Controller
             'description' => $data['description'],
             'industry' => $data['industry'],
         ]);
+        Industry::create([
+            'name' => $data['industry'],
+        ]);
 
-        
+        auth()->login($user);
         return redirect('/');
     }
 }

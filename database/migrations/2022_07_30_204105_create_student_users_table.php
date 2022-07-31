@@ -19,7 +19,6 @@ class CreateStudentUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('university');
             $table->string('factualy');
             $table->float('gpa');
             $table->timestamps();

@@ -21,7 +21,10 @@ class CompanyUser extends Model
         return $this->belongsTo(Industry::class,'industry_id');
     }
 
-    
+    public function internShipPosts()
+    {
+        return $this->hasMany(internShipPost::class,'company_id');
+    }
 
 
 }
