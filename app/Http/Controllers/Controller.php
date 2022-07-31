@@ -10,4 +10,22 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function create()
+    {
+        return view('login-form');
+    }
+
+    public function store()
+    {
+        $data = request()->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        if (auth()->attempt($data)) {
+            session()->regenerate();
+            return redirect('/');
+        }
+        return redirect('/login');
+    }
 }

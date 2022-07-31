@@ -1,44 +1,66 @@
 <x-layout>
-<main class="mt-24 mb-24">
-<div class="flex items-center justify-center min-h-full px-4 py-12 sm:px-6 lg:px-8">
-  <div class="w-full max-w-md space-y-8">
-    <div>
-      <img class="w-auto h-12 mx-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
-      <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900">Sign in to your account</h2>
 
+<section class="w-full h-full mt-16 mb-16 ml-40 gradient-form md:h-screen">
+  <div class="container h-full px-6 py-12">
+    <div class="flex flex-wrap items-center justify-center h-full text-gray-800 g-6">
+      <div class="xl:w-10/12">
+        <div class="block bg-white rounded-lg shadow-lg">
+          <div class="lg:flex lg:flex-wrap g-0">
+            <div class="px-4 lg:w-6/12 md:px-0">
+              <div class="md:p-12 md:mx-6">
+                <div class="text-center">
+                  <img
+                    class="w-48 mx-auto"
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    alt="logo"
+                  />
+                  <h4 class="pb-1 mt-1 mb-12 text-xl font-semibold">We are The Lotus Team</h4>
+                </div>
+                <form action="/student/register" method="POST" >
+                    @csrf
+
+                  <p class="mb-4">Register</p>
+                  <x-form.input name="name" type="text"/>
+                  <x-form.input name="email" type="email"/>
+                  <x-form.input name="password" type="password"/>
+                  <x-form.input name="gpa" type="number"/>
+                  <x-form.input name="factualy" type="text"/>
+
+
+                  <div class="pt-1 pb-1 mb-12 text-center">
+                    <x-form.button name="Sign Up" type="submit"/>
+                    <a class="text-gray-500" href="#!">Forgot password?</a>
+                  </div>
+                  <div class="flex items-center justify-between pb-6">
+                   <p class="mb-0 mr-2">Already have account?<a href="#" class="text-blue-700 ">login</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div
+              class="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
+              style="
+                background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+              "
+            >
+              <div class="px-4 py-6 text-white md:p-12 md:mx-6">
+                <h4 class="mb-6 text-xl font-semibold">We are more than just a company</h4>
+                <p class="text-sm">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <form class="mt-8 space-y-6" action="/student/register" method="POST">
-        @csrf
-      <input type="hidden" name="remember" value="true">
-      <div class="-space-y-px rounded-md shadow-sm">
-      <x-form.input name="name" type="text"/>
-       <x-form.input name="email" type="email"/>
-       <x-form.input name="password" type="password"/>
-       <x-form.number-input name="gpa" type="number" min="0" max="4" step="0.1" />
-</div>
-
-      <select name="university" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        <option>Select university</option>
-        <option value="student" >uni 1</option>
-        <option value="uni2">uni 2</option>
-        <option value="uni3">uni3</option>
-      </select>
-
-      <select name="factualy" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        <option>Select Factualy</option>
-        <option value="student">uni 1</option>
-        <option value="uni2">uni 2</option>
-        <option value="uni3">uni3</option>
-      </select>
-
-
-
-
-    <x-form.button/>
-    </form>
   </div>
-</div>
-</main>
+</section>
+
+
 
 </x-layout>
 

@@ -1,7 +1,16 @@
-<header>
+<header class="gradiant">
 <style>
     html {
         scroll-behavior: smooth;
+    }
+    .gradiant{
+        background: linear-gradient(
+            to right,
+            #ee7724,
+            #d8363a,
+            #dd3675,
+            #b44593
+        );
     }
 </style>
 <div class="pt-24">

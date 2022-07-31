@@ -53,5 +53,10 @@ class User extends Authenticatable
         return $this->hasMany(CompanyUser::class);
     }
 
-    
+    public function isStudent()
+    {
+        return $this->role === 'student';
+    }
+
+
 }
