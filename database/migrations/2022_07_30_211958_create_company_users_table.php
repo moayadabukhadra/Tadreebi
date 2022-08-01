@@ -23,7 +23,7 @@ class CreateCompanyUsersTable extends Migration
             $table->string('phone');
             $table->string('website');
             $table->string('description');
-            $table->string('industry');
+            $table->foreignId('industry_id')->constrained()->onDelete('cascade');
             $table->timestamps();
 
         });

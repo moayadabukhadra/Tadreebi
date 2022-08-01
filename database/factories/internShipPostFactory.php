@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CompanyUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class InternShipPostFactory extends Factory
@@ -14,7 +15,11 @@ class InternShipPostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'company_users_id'=>CompanyUser::factory(),
+            'title' => $this->faker->word,
+            'description' => $this->faker->text,
+            'is_active' => $this->faker->boolean(),
+            'paid' => $this->faker->boolean(),
         ];
     }
 }
