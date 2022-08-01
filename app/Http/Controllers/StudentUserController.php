@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\internShipPost;
 use App\Models\StudentUser;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -58,7 +59,9 @@ class StudentUserController extends Controller
 
     public function dashboard(){
 
-        return view('dashboards.student-dashboard');
+        return view('dashboards.student-dashboard',[
+            'posts' => internShipPost::all(),
+        ]);
 
     }
 

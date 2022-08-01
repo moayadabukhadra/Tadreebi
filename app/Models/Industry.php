@@ -11,7 +11,7 @@ class Industry extends Model
 
     protected $guarded = [];
 
-    public function companyUsers()
+    public function company()
     {
         return $this->hasMany(CompanyUser::class);
     }

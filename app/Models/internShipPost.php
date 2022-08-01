@@ -13,7 +13,7 @@ class internShipPost extends Model
 
     public function company()
     {
-        return $this->belongsTo(CompanyUser::class,'company_user_id');
+        return $this->belongsTo(CompanyUser::class,'company_users_id');
     }
 
     public function application()

@@ -33,7 +33,9 @@ Route::post('login', [Controller::class, 'store']);
 Route::get('company/register',[CompanyUserController::class,'create']);
 Route::post('company/register',[CompanyUserController::class,'store']);
 Route::get('company/dashboard',[CompanyUserController::class,'dashboard'])->middleware('company');
-Route::get('show',[CompanyUserController::class,'show'])->middleware('company');
+Route::get('application/{application:id}',[CompanyUserController::class,'show'])->middleware('company');
+Route::get('company/dashboard/accepted',[CompanyUserController::class,'showAccepted'])->middleware('company');
+Route::post('application/{application:id}',[CompanyUserController::class,'accept'])->middleware('company');
 
 //Student
 Route::get('student/register',[StudentUserController::class,'create']);

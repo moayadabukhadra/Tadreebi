@@ -1,14 +1,12 @@
 <x-layout>
-    @include('components._header')
-    <main class="bg-white">
-        <div class="grid justify-center grid-flow-col grid-rows-4 gap-20" >
-            <x-cards.post-card  />
-            <x-cards.post-card />
-            <x-cards.post-card />
-            <x-cards.post-card />
-            <x-cards.post-card />
-            <x-cards.post-card />
+    <x-nav/>
+    <main class="mt-12 ">
 
-        </div>
+            @foreach ($posts as $post)
+                <x-cards.post-card :post="$post" />
+            @endforeach
+
+
     </main>
+    @include('components._footer')
 </x-layout>
