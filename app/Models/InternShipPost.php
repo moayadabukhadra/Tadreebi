@@ -16,9 +16,13 @@ class internShipPost extends Model
         return $this->belongsTo(CompanyUser::class,'company_users_id');
     }
 
-    public function application()
+    public function applications()
     {
         return $this->hasMany(InternShipApplication::class,'intern_ship_application_id');
+    }
+
+    public function proposals(){
+        return $this->hasMany(Proposal::class,'proposal_id');
     }
 
 }

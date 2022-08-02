@@ -18,6 +18,7 @@ class CreateProposalsTable extends Migration
             $table->timestamps();
             $table->foreignId('student_user_id')->constrained()->onDelete('cascade');
             $table->foreignId('intern_ship_post_id')->constrained()->onDelete('cascade');
+            $table->string('feedback')->nullable();
             $table->boolean('status')->default(false);
         });
     }

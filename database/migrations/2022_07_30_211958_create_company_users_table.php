@@ -19,11 +19,12 @@ class CreateCompanyUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('adress');
+            $table->string('address');
             $table->string('phone');
-            $table->string('website');
-            $table->string('description');
-            $table->foreignId('industry_id')->constrained()->onDelete('cascade');
+            $table->string('website')->nullable();
+            $table->string('description')->nullable();
+            $table->string('industry');
+            $table->string('logo')->nullable();
             $table->timestamps();
 
         });

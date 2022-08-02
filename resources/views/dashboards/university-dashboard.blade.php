@@ -5,8 +5,7 @@
     <div class="flex items-center justify-center">
         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="toolbar">
             <a href="/" class="rounded-xl inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">Home</a>
-            <a href="/company/dashboard/" class="rounded-xl inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">All Applications</a>
-            <a href="/company/post/create" class="rounded-xl inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">Create Post</a>
+            <a href="/company/dashboard/" class="rounded-xl inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">All Proposals</a>
         </div>
     </div>
 
@@ -14,7 +13,7 @@
     <div class="w-full sm:px-6">
         <div class="px-4 py-4 md:px-10 md:py-7">
             <div class="flex items-center justify-between">
-                <p tabindex="0" class="text-base font-bold leading-normal text-gray-800 focus:outline-none sm:text-lg md:text-xl lg:text-2xl dark:text-white">Applications</p>
+                <p tabindex="0" class="text-base font-bold leading-normal text-gray-800 focus:outline-none sm:text-lg md:text-xl lg:text-2xl dark:text-white">Proposals</p>
                 <div class="flex items-center px-4 py-3 text-sm font-medium leading-none text-gray-600 bg-gray-200 rounded cursor-pointer dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700">
                     <p>Sort By:</p>
                     <select aria-label="select" class="ml-1 bg-transparent focus:text-indigo-600 focus:outline-none">
@@ -48,22 +47,22 @@
             <div class="overflow-x-auto mt-7">
                 <table class="w-full whitespace-nowrap">
                     <x-table.table-th name="student" />
-                    <x-table.table-th name="Factualy" />
+                    <x-table.table-th name="major" />
                     <x-table.table-th name="Post" />
-                    <x-table.table-th name="gpa" />
+                    <x-table.table-th name="Company" />
                     <x-table.table-th name="Status" />
                     <x-table.table-th name="date" />
 
                     <tbody>
-@foreach($applications as $application)
+@foreach($proposals as $proposal)
                         <x-table.table-tr>
-                            <x-table.table-td name="{{ $application->student->name }}" />
-                            <x-table.table-td name="{{ $application->student->factualy }}" />
-                            <x-table.table-td name="{{ $application->internShipPost->title }}" />
-                            <x-table.table-td name="{{ $application->student->gpa }}" />
-                            <x-table.table-td name="{{ $application->status ? 'accepted' : 'pending' }}" />
-                            <x-table.table-td name="{{ $application->created_at }}" />
-                            <x-table.table-button name="view" path="/application/{{ $application->id }}" />
+                            <x-table.table-td name="{{ $proposal->student->name }}" />
+                            <x-table.table-td name="{{ $proposal->student->major }}" />
+                            <x-table.table-td name="{{ $proposal->internShipPost->title }}" />
+                            <x-table.table-td name="{{ $proposal->internShipPost->company->name }}" />
+                            <x-table.table-td name="{{ $proposal->status ? 'accepted' : 'pending' }}" />
+                            <x-table.table-td name="{{ $proposal->created_at }}" />
+                            <x-table.table-button name="view" path="/university/proposal/{{$proposal->id}}" />
                         </x-table.table-tr>
 @endforeach
                     </tbody>

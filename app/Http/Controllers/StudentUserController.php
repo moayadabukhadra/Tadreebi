@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InternShipApplication;
 use App\Models\internShipPost;
 use App\Models\StudentUser;
 use App\Models\User;
@@ -10,15 +11,8 @@ use Illuminate\Http\Request;
 
 class StudentUserController extends Controller
 {
-    public function destroy()
-    {
-        auth()->logout();
 
-        return redirect('/');
-    }
-    public function show(){
-        return view('components.post-show');
-    }
+
 
    public function create(){
        return view('student-form');
@@ -32,8 +26,11 @@ class StudentUserController extends Controller
             'email' => 'required|email',
             'password' => 'required',
             'gpa' => 'required|max:4|min:0',
-            'factualy' => 'required',
+            'major' => 'required',
+            'student_number' => 'required',
+
         ]);
+       
 
 
 
@@ -62,6 +59,28 @@ class StudentUserController extends Controller
         return view('dashboards.student-dashboard',[
             'posts' => internShipPost::all(),
         ]);
+
+    }
+
+    public function apply()
+    {
+
+        $application = request()->validate([
+            'intern_ship_post_id' => 'required',
+            'cover_letter' => 'required',
+        ]);
+
+
+        $application['status']=0;
+        $application['student_user_id'] = auth()->user()->student->id;
+
+
+        $application=InternShipApplication::create($application);
+
+        $application->save();
+
+
+            return redirect('/student/dashboard');
 
     }
 

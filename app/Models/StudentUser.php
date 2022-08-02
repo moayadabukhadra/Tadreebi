@@ -13,10 +13,10 @@ class StudentUser extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class);
     }
 
-    public function internShipApplication()
+    public function internShipApplications()
     {
         return $this->hasMany(InternShipApplication::class,'intern_ship_application_id');
     }
