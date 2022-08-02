@@ -16,7 +16,7 @@
                   />
                   <h4 class="pb-1 mt-1 mb-12 text-xl font-semibold">We are The Lotus Team</h4>
                 </div>
-                <form action="/company/register" method="POST">
+                <form action="/company/register" method="POST" enctype="multipart/form-data">
                     @csrf
 
                   <p class="mb-4">Register</p>
@@ -25,9 +25,16 @@
                   <x-form.input name="password" type="password"/>
                   <x-form.input name="phone" type="phone"/>
                   <x-form.input name="adress" type="text"/>
-                  <x-form.input name="industry" type="text"/>
                   <x-form.input name="website" type="text"/>
                   <x-form.textarea name="description" type="text"/>
+                    <x-form.input name="logo" type="file"/>
+                  <select class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  name="industry_id">
+                    <option value="" >Select Industry</option>
+                    @foreach($industries as $industry)
+                      <option value="{{ $industry->id }}">{{ $industry->name }}</option>
+                    @endforeach
+                  </select>
 
 
 

@@ -1,4 +1,4 @@
-<header class="gradiant">
+<header class="gradient">
 <style>
     html {
         scroll-behavior: smooth;

@@ -20,6 +20,7 @@ class InternShipApplicationFactory extends Factory
            'student_user_id'=>StudentUser::factory(),
            'intern_ship_post_id'=>internShipPost::factory(),
            'cover_letter'=>$this->faker->text,
+           'cv'=>$this->faker->text,
            'status'=>false,
         ];
 

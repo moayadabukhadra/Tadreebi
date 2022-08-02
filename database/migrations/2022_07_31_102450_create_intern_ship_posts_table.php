@@ -18,8 +18,9 @@ class CreateInternShipPostsTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->string('description');
+            $table->string('thumbnail')->nullable();
             $table->boolean('paid');
-            $table->boolean('is_active');
+            $table->boolean('is_active')->default(true);
             $table->foreignId('company_users_id')->constrained()->onDelete('cascade');
 
 

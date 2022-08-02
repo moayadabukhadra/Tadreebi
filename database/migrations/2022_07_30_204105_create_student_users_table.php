@@ -15,12 +15,16 @@ class CreateStudentUsersTable extends Migration
     {
         Schema::create('student_users', function (Blueprint $table) {
             $table->id('id');
+            $table->string('student_number');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('factualy');
+            $table->string('major');
             $table->float('gpa');
+            $table->string('image')->nullable();
+            $table->string('cv')->nullable();
+            $table->string('summary')->nullable();
             $table->timestamps();
         });
     }
