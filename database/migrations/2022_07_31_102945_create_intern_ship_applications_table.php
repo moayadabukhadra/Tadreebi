@@ -17,8 +17,10 @@ class CreateInternShipApplicationsTable extends Migration
             $table->id();
             $table->foreignId('student_user_id')->constrained()->onDelete('cascade');
             $table->foreignId('intern_ship_post_id')->constrained()->onDelete('cascade');
-            $table->boolean('status')->default(false);
+            $table->string('status')->default('pending');
             $table->string('feedback')->nullable();
+            $table->string('cover_letter')->nullable();
+            $table->string('resume')->nullable();
             $table->timestamps();
             });
     }

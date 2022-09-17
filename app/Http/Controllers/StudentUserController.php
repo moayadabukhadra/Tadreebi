@@ -6,6 +6,7 @@ use App\Models\InternShipApplication;
 use App\Models\internShipPost;
 use App\Models\StudentUser;
 use App\Models\User;
+use DeepCopy\Filter\Filter;
 use Illuminate\Http\Request;
 
 
@@ -14,11 +15,13 @@ class StudentUserController extends Controller
 
 
 
-   public function create(){
-       return view('student-form');
+    public function create()
+    {
+        return view('student-form');
     }
 
-    public function store(){
+    public function store()
+    {
 
 
         $attributes = request()->validate([
@@ -30,7 +33,7 @@ class StudentUserController extends Controller
             'student_number' => 'required',
 
         ]);
-       
+
 
 
 
@@ -45,49 +48,50 @@ class StudentUserController extends Controller
         StudentUser::create($attributes);
 
         auth()->login($user);
-        return redirect('/');
+        return redirect('/student/dashboard');
     }
 
-    // public function show(){
-    //     $student = auth()->user()->student;
-    //     return view('student-profile', compact('student'));
 
-    // }
 
-    public function dashboard(){
+    public function dashboard($id){
 
-        return view('dashboards.student-dashboard',[
-            'posts' => internShipPost::all(),
-        ]);
-
+        $student = StudentUser::find($id);
+        return view('components.student.student-dashboard',
+    [
+        'student'=>$student
+    ]);
+    
     }
 
-    public function apply()
+
+
+
+    public function updateForm()
     {
 
-        $application = request()->validate([
-            'intern_ship_post_id' => 'required',
-            'cover_letter' => 'required',
-        ]);
+
+        $attributes =  request(['summary', 'image', 'address']);
 
 
-        $application['status']=0;
-        $application['student_user_id'] = auth()->user()->student->id;
+        foreach ($attributes as $key => $value) {
+            if ($value == null) {
+                unset($attributes[$key]);
+            }
+        }
+
+        if ($attributes['image']) {
+            $attributes['image'] = request()->file('image')->store('images');
+        }
+
+        auth()->user()->student->update($attributes);
 
 
-        $application=InternShipApplication::create($application);
-
-        $application->save();
-
-
-            return redirect('/student/dashboard');
-
+        return redirect('/student/dashboard');
     }
 
 
-
-
+    public function update()
+    {
+        return view('components.student.update-form');
+    }
 }
-
-
-

@@ -18,7 +18,7 @@ class InternShipApplication extends Model
 
     public function internShipPost()
     {
-        return $this->belongsTo(internShipPost::class,'intern_ship_post_id');
+        return $this->belongsTo(InternShipPost::class,'intern_ship_post_id');
     }
 
 

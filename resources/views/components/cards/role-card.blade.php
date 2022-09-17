@@ -9,16 +9,19 @@
 
             </a>
             <div class="flex justify-center">
-            <img src="images/hero.png" width="225" >
+            <img src="images/{{ $name }}-icon.png" width="200" height="200" >
             </div>
         </div>
 
         <div class="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
             <div class="flex items-center justify-center">
                 <a  href="{{ $name }}/register" class="px-8 py-4 mx-auto my-6 font-bold text-white transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 hover:underline gradient focus:outline-none focus:shadow-outline hover:scale-105">
-                    Action
+                    Register
 </a>
             </div>
+
         </div>
+
+
     </div>
 

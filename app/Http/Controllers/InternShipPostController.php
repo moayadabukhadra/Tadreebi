@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InternShipPost;
 use App\Models\InternShipApplication;
-use App\Models\internShipPost;
 use Illuminate\Http\Request;
 
 class InternShipPostController extends Controller
@@ -29,7 +29,7 @@ class InternShipPostController extends Controller
             $paid=1;
         }
 
-        internShipPost::create([
+        InternShipPost::create([
             'title' => request('title'),
             'description' => request('description'),
             'company_users_id' => auth()->user()->company->id,
@@ -37,16 +37,18 @@ class InternShipPostController extends Controller
             'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
         ]);
 
-        return redirect('/');
+        return redirect('/student/internships');
 
     }
 
-    public function show(InternShipApplication $application){
-
-        return view('components.company.application',[
-            'application' => $application,
+    public function show( ){
+        return view('components.student.posts-show',[
+            'posts' =>InternShipPost::all(),
         ]);
 
     }
+
+
+
 
 }

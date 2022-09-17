@@ -23,8 +23,8 @@ class CreateStudentUsersTable extends Migration
             $table->string('major');
             $table->float('gpa');
             $table->string('image')->nullable();
-            $table->string('cv')->nullable();
             $table->string('summary')->nullable();
+            $table->string('address')->nullable();
             $table->timestamps();
         });
     }

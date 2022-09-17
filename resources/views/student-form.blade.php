@@ -18,37 +18,28 @@
                                         <p class="mb-4">Register</p>
                                         <x-form.input name="name" type="text" />
                                         @error('name')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                                         <x-form.input name="email" type="email" />
                                         @error('email')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                                         <x-form.input name="password" type="password" />
                                         @error('password')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
-                                    <x-form.input name="student_number" type="text" />
-                                    @error('student_number')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
+                                        <x-form.input name="student_number" type="text" />
+                                        @error('student_number')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                                         <x-form.input name="gpa" type="number" />
                                         @error('gpa')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                                         <x-form.input name="major" type="text" />
                                         @error('major')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
-                                        <x-form.input name="cv" type="file" />
-                                        @error('cv')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
-                                        <x-form.textarea name="description" />
-                                        @error('description')
-                                    <p class="text-xs italic text-red-500">{{ $message }}</p>
-                                    @enderror
-
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
 
 
 
