@@ -21,21 +21,41 @@
 
                   <p class="mb-4">Register</p>
                   <x-form.input name="name" type="text"/>
+                  @error('name')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                   <x-form.input name="email" type="email"/>
+                  @error('email')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                   <x-form.input name="password" type="password"/>
+                  @error('password')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                   <x-form.input name="phone" type="phone"/>
-                  <x-form.input name="adress" type="text"/>
+                  @error('phone')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
+                  <x-form.input name="address" type="text"/>
+                  @error('address')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                   <x-form.input name="website" type="text"/>
+                     @error('website')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                   <x-form.textarea name="description" type="text"/>
+                  @error('description')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
                     <x-form.input name="logo" type="file"/>
-                  <select class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  name="industry_id">
-                    <option value="" >Select Industry</option>
-                    @foreach($industries as $industry)
-                      <option value="{{ $industry->id }}">{{ $industry->name }}</option>
-                    @endforeach
-                  </select>
-
+                    @error('logo')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
+                    <x-form.input name="industry" type="text"/>
+                    @error('industry')
+                                        <p class="text-xs italic text-red-500">{{ $message }}</p>
+                                        @enderror
 
 
 

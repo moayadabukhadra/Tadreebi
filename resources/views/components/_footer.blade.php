@@ -44,10 +44,10 @@
             <p class="text-gray-500 uppercase md:mb-6">Social</p>
             <ul class="mb-6 list-reset">
               <li class="inline-block mt-2 mr-2 md:block md:mr-0">
-                <a href="#" class="text-gray-800 no-underline hover:underline hover:text-pink-500">Facebook</a>
+                <a href="https://www.facebook.com/moayad.abukhadra.79/" class="text-gray-800 no-underline hover:underline hover:text-pink-500">Facebook</a>
               </li>
               <li class="inline-block mt-2 mr-2 md:block md:mr-0">
-                <a href="#" class="text-gray-800 no-underline hover:underline hover:text-pink-500">Linkedin</a>
+                <a href="https://www.linkedin.com/in/moayad-abukhadra-8b5b10232/" class="text-gray-800 no-underline hover:underline hover:text-pink-500">Linkedin</a>
               </li>
               <li class="inline-block mt-2 mr-2 md:block md:mr-0">
                 <a href="#" class="text-gray-800 no-underline hover:underline hover:text-pink-500">Twitter</a>
@@ -58,7 +58,7 @@
             <p class="text-gray-500 uppercase md:mb-6">Company</p>
             <ul class="mb-6 list-reset">
               <li class="inline-block mt-2 mr-2 md:block md:mr-0">
-                <a href="#" class="text-gray-800 no-underline hover:underline hover:text-pink-500">Official Blog</a>
+                <a href="https://github.com/moayadabukhadra" class="text-gray-800 no-underline hover:underline hover:text-pink-500">Github</a>
               </li>
               <li class="inline-block mt-2 mr-2 md:block md:mr-0">
                 <a href="#" class="text-gray-800 no-underline hover:underline hover:text-pink-500">About Us</a>

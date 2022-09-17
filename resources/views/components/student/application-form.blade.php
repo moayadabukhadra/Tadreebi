@@ -36,7 +36,7 @@
                                 industry:
                             </div>
                             <p class="text-lg font-medium text-gray-900 truncate dark:text-white">
-                                {{ $post->company->industry->name }}
+                                {{ $post->company->industry }}
                             </p>
                         </div>
                     </li>
@@ -70,12 +70,12 @@
                     <p class="text-center text-black"></p>
                 </div>
 
-                    <form method="POST" action="">
+                    <form method="POST" action="/student/apply/{{$post->id }}" enctype="multipart/form-data">
                         @csrf
                         <x-form.textarea name="cover_letter" />
 
                         <!--file input -->
-                        <x-form.input type="file" name="cv" />
+                        <x-form.input type="file" name="resume" />
                         <button id="navAction" class="px-8 py-4 mx-auto mt-4 font-bold text-gray-800 transition duration-300 ease-in-out transform bg-blue-500 rounded-full shadow opacity-75 lg:mx-0 hover:underline lg:mt-0 focus:outline-none focus:shadow-outline hover:scale-105" type="submit">
                             Apply
                         </button>

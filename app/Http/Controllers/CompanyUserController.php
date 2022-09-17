@@ -25,12 +25,13 @@ class CompanyUserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            'adress' => 'required',
+            'address' => 'required',
             'phone' => 'required',
             'website' => 'required',
             'description' => 'required',
-            'industry_id' => 'required',
-            
+            'industry' => 'required',
+            'logo' => 'required|image',
+
         ]);
         $user = User::create([
             'name' => $data['name'],
@@ -38,43 +39,51 @@ class CompanyUserController extends Controller
             'password' => bcrypt($data['password']),
             'role' => 'company',
         ]);
+
         $data['user_id'] = $user->id;
+        $data['logo'] = request()->file('logo')->store('logos');
         CompanyUser::create($data);
 
         auth()->login($user);
-        return redirect('/');
+        return redirect('/company/dashboard');
+
     }
 
-    public function dashboard()
-    {
-        return view('dashboards.company-dashboard',[
-            'applications' => InternShipApplication::all(),
+    public function show($id){
+        $company= CompanyUser::find($id);
+        return view('components.company.company-dashboard',
+        [
+         'company'=> $company
         ]);
     }
 
-    public function show(InternShipApplication $application)
-    {
-        return view('components.company.application', [
-            'application' => $application,
-        ]);
+    public function updateForm(){
+        return view('components.company.update-form');
 
     }
 
-    public function showAccepted(){
-        return view('dashboards.company-dashboard',[
-            'applications' => InternShipApplication::get()->where('status','1'),
-        ]);
+    public function update(){
+        $attributes=request(['address','phone','website','description','logo']);
+
+        foreach ($attributes as $key => $value) {
+            if ($value == null) {
+                unset($attributes[$key]);
+            }
+        }
+        if ($attributes['logo']) {
+            $attributes['logo'] = request()->file('logo')->store('logos');
+        }
+
+        auth()->user()->company->update($attributes);
+
+
+        return redirect('/company/dashboard');
+
     }
 
-    public function accept(InternShipApplication $application){
-         $application->update([
-              'status' => 1,
-         ]);
-
-            return redirect('/company/dashboard/accepted');
-
 
     }
 
 
-}
+
+
