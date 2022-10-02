@@ -18,7 +18,7 @@
         </div>
         <section class="py-8 bg-white border-b ">
             <div class="container max-w-5xl m-8 mx-auto">
-                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800" id="data">
                     What is Tadreebi
                 </h1>
                 <div class="w-full mb-4">
@@ -78,4 +78,5 @@
 
     </main>
     @include('components._footer')
+
 </x-layout>

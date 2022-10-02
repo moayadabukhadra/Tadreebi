@@ -19,11 +19,9 @@ class SessionController extends Controller
         ]);
         if (auth()->attempt($data)) {
             session()->regenerate();
-            if (auth()->user()->role == 'student') {
-                return redirect('/student/dashboard');
-            } else {
-                return redirect('/company/dashboard');
-            }
+
+                return redirect('/student/internships');
+
         }
         return redirect('/login');
     }

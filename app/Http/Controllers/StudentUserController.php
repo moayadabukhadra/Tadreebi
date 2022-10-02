@@ -26,7 +26,7 @@ class StudentUserController extends Controller
 
         $attributes = request()->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'gpa' => 'required|max:4|min:0',
             'major' => 'required',
@@ -48,7 +48,7 @@ class StudentUserController extends Controller
         StudentUser::create($attributes);
 
         auth()->login($user);
-        return redirect('/student/dashboard');
+        return redirect('/student/internships');
     }
 
 
@@ -60,7 +60,7 @@ class StudentUserController extends Controller
     [
         'student'=>$student
     ]);
-    
+
     }
 
 

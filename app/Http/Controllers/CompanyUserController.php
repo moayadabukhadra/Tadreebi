@@ -77,7 +77,7 @@ class CompanyUserController extends Controller
         auth()->user()->company->update($attributes);
 
 
-        return redirect('/company/dashboard');
+        return redirect('student/internships');
 
     }
 
